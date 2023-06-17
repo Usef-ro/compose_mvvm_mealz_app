@@ -3,9 +3,21 @@ package com.example.compose_mvvm2
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.material.CircularProgressIndicator
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalTextToolbar
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -15,7 +27,9 @@ import androidx.navigation.navArgument
 import com.example.compose_mvvm2.ui.detail.mainScrMealz
 import com.example.compose_mvvm2.ui.detail.materialDetails
 import com.example.compose_mvvm2.ui.mealz.detailMealzViewModel
+import com.example.compose_mvvm2.ui.mealz.mealCategoryViewModel
 import com.example.compose_mvvm2.ui.theme.Compose_mvvm2Theme
+import kotlinx.coroutines.CoroutineScope
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,7 +54,7 @@ class MainActivity : ComponentActivity() {
 //
 //
 //                }
-                FoodzApp()
+               FoodzApp()
             }
         }
     }
@@ -69,6 +83,7 @@ fun FoodzApp() {
         }
     }
 }
+
 
 @Preview(showBackground = true)
 @Composable

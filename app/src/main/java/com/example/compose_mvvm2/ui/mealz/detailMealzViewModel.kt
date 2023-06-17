@@ -14,7 +14,7 @@ class detailMealzViewModel(val state: SavedStateHandle) : ViewModel() {
 
     init {
         val mealId = state.get<String>("meal_category_id") ?: ""
-        
+
         mealzDet.value = mealsRepositor.getDetail(mealId)
     }
 

@@ -16,7 +16,7 @@ class mealCategoryViewModel(private val repository: mealsRepository = mealsRepos
     ViewModel() {
 
 //    val mealJob=Job()
-
+//    val status= mutableStateOf(false)
     private lateinit var connectivityManager: checkLive
 
     init {
@@ -27,9 +27,10 @@ class mealCategoryViewModel(private val repository: mealsRepository = mealsRepos
             while (attempts < 3 && meals.isNullOrEmpty()) {
                 try {
                     meals = getList()
-
                     Log.e("viemodel", "" + meals)
+
                     remeberMealz.value = meals
+//                    status.value=true
                 } catch (e: Exception) {
                     Log.e("catch", "" + attempts)
                     attempts++
